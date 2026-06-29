@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>gazebo_continuous_track_example_ros2_gazebo11</name>
+  <version>0.0.4</version>
+  <description>Example assets for gazebo_continuous_track_ros2_gazebo11 ported to ROS 2.</description>
+  <maintainer email="okada@rm.is.tohoku.ac.jp">Yoshito Okada</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>gazebo</depend>
+  <depend>geometry_msgs</depend>
+  <depend>rclcpp</depend>
+
+  <exec_depend>gazebo_continuous_track_ros2_gazebo11</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>rqt_robot_steering</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <gazebo_ros gazebo_plugin_path="${prefix}/lib" />
+  </export>
+</package>

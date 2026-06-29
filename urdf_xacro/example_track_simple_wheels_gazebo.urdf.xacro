@@ -1,0 +1,34 @@
+<robot name="example_track_simple_wheels" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- -->
+
+    <xacro:include filename="$(find gazebo_continuous_track_ros2_gazebo11)/urdf_xacro/macros_track_simple_gazebo.urdf.xacro" />
+    <xacro:include filename="example_track.urdf.xacro" />
+
+    <!-- -->
+
+    <xacro:make_track_simple_wheels name="track" mass="0.4" length="0.7" radius="0.125" width="0.5" parent="body" sprocket_joint="sprocket_axle" pitch_diameter="0.24" count="7" enable_plugin="false">
+        <material>
+            <ambient>0.3 0.1 0.1 1</ambient>
+            <diffuse>0.2 0.2 0.2 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+    </xacro:make_track_simple_wheels>
+
+    <gazebo>
+        <canonical_link>body</canonical_link>
+        <plugin name="example_track_simple_wheels_drive" filename="libgazebo_continuous_track_example_ros2_gazebo11_drive.so">
+            <cmd_vel_topic>/cmd_vel</cmd_vel_topic>
+            <sprocket_joint>sprocket_axle</sprocket_joint>
+            <track_joint_prefix>track</track_joint_prefix>
+            <sprocket_radius>${wheel_radius}</sprocket_radius>
+            <track_radius>0.125</track_radius>
+            <wheel_joint_count>7</wheel_joint_count>
+            <max_linear_velocity>0.6</max_linear_velocity>
+            <max_angular_velocity>1.2</max_angular_velocity>
+            <command_timeout>0.5</command_timeout>
+        </plugin>
+    </gazebo>
+
+</robot>
