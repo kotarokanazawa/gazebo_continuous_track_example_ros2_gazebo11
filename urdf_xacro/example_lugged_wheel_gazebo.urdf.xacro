@@ -16,7 +16,7 @@
         </material>
     </xacro:property>
 
-    <xacro:make_lugged_wheel name="left_wheel" x="0.25" y="0.15" mass="0.4" radius="0.115" width="0.2" parent="stabilizer" sprocket_joint="shaft_axle" pitch_diameter="0.24" enable_plugin="false">
+    <xacro:make_lugged_wheel name="left_wheel" x="0.25" y="0.15" mass="0.4" radius="0.115" width="0.2" parent="stabilizer" sprocket_joint="shaft_axle" pitch_diameter="0.24" enable_plugin="true">
         <xacro:insert_block name="wheel_material" />
         <pattern>
             <elements_per_round>8</elements_per_round>
@@ -28,7 +28,7 @@
         </pattern>
     </xacro:make_lugged_wheel>
 
-    <xacro:make_lugged_wheel name="right_wheel" x="0.25" y="-0.15" mass="0.4" radius="0.115" width="0.2" parent="stabilizer" sprocket_joint="shaft_axle" pitch_diameter="0.24" enable_plugin="false">
+    <xacro:make_lugged_wheel name="right_wheel" x="0.25" y="-0.15" mass="0.4" radius="0.115" width="0.2" parent="stabilizer" sprocket_joint="shaft_axle" pitch_diameter="0.24" enable_plugin="true">
         <xacro:insert_block name="wheel_material" />
         <pattern>
             <elements_per_round>8</elements_per_round>
