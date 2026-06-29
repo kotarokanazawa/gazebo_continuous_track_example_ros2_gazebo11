@@ -8,6 +8,11 @@ originally created by Okada et al. The original ROS 1 repositories are:
 - https://github.com/yoshito-n-students/gazebo_continuous_track
 - https://github.com/yoshito-n-students/gazebo_continuous_track_example
 
+This example package requires the matching ROS 2 / Gazebo 11 plugin package.
+Clone and build the plugin repository together with this example repository:
+
+- https://github.com/kotarokanazawa/gazebo_continuous_track_ros2_gazebo11
+
 This package provides Gazebo Classic launch files and xacro models for comparing
 continuous tracks, simple track approximations, simple wheel approximations, and
 lugged wheels. The ROS 2 example track accepts `geometry_msgs/msg/Twist` on
@@ -30,6 +35,10 @@ source /opt/ros/humble/setup.bash
 colcon build --packages-select gazebo_continuous_track_ros2_gazebo11 gazebo_continuous_track_example_ros2_gazebo11 --symlink-install
 source install/setup.bash
 ```
+
+`gazebo_continuous_track_ros2_gazebo11` provides the Gazebo plugins and xacro
+macros used by these examples. This repository alone is not enough to run the
+launch files.
 
 ## Launch
 
